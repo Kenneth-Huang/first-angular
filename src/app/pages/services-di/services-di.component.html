@@ -1,0 +1,8 @@
+<p>message: {{messages}}</p>
+<!-- <p>message: {{postMessages}}</p> -->
+<div *ngFor="let message of postMessages">
+	<h2>{{message.title}}</h2>
+	<p>{{message.body}}</p>
+	<hr>
+</div>
+

@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+
+<!-- 
+<div *ngIf="isLoggedIn && true">Welcome, {{username}}</div>
+<div *ngIf="!isLoggedIn"> Please login</div> -->
+
+<!-- same results as above -->
+<div *ngIf="isLoggedIn; else loggedOut">Welcome, {{username}}</div>
+<ng-template #loggedOut>Please login</ng-template>
+
+<!-- Be careful on the syntax of ngFor -->
+<div>
+	<ul>
+		<li *ngFor="let name of names; let i = index">{{name}}</li>
+	</ul>
+</div>
+
+<div [ngSwitch]="grade">
+	<p *ngSwitchCase="'A'">Excellence</p>
+	<p *ngSwitchCase="'B'">Good</p>
+	<p *ngSwitchDefault>Default</p>
+</div>

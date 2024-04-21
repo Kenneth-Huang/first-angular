@@ -1,0 +1,20 @@
+<div>
+	<h2>User</h2>
+	<form #userForm = "ngForm" (ngSubmit) = "submitForm(userForm)"><!--please remember add the brackets here -->
+		<div>
+			<label for="name"> Name:</label>
+			<input id="name" type="text" name="name" placeholder="name" required
+			[(ngModel)]="user.name"
+			/>
+		</div>
+		<div>
+			<label for="email"> Email:</label>
+			<input id="email" type="text" name="email" placeholder="email" required
+			[(ngModel)]="user.email"
+			/>
+		</div>
+		<div>
+			<button type="submit" name="submit" [disabled]="userForm.invalid || !validateEmail()">Submit</button>
+		</div>
+	</form>
+</div>

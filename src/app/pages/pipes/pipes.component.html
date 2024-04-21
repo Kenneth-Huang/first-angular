@@ -1,0 +1,23 @@
+<h1>{{title | uppercase}}</h1>
+
+<div>
+<p>Today is {{today}}</p>
+<p>Today is {{today | date}}</p>
+
+<p>Today is {{today | date : "fullDate"}}</p>
+<p>Today is {{today | date : "h:mm:ss"}}</p>
+
+<p>{{fee| currency}}</p>
+<p>{{fee| currency}}</p>
+
+<p>{{fee| currency : "EUR": "symbol" : "2.1-3"}}</p>
+
+<p>{{fee| percent}}</p>
+
+<!-- Customized pipe -->
+<p>{{title | append: ' append name'}}</p>
+
+
+
+
+</div>
