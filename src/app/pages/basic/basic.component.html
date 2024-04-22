@@ -1,0 +1,38 @@
+<button type="button" [disabled]='buttonAttr.isDisabled'>{{buttonAttr.label}}</button>
+<img alt="Angular" width="300" height="200" [src]="imageURL"/>
+<!-- in line style -->
+<div [style.backgroundColor]="container.bgColor">
+  <h2 [style.color]="titleColor">Hello {{title}}</h2>
+  <p [style] = "description">Description</p>
+</div>
+
+<!-- css class from the .scss file, and controlled by the variable stored in .ts file -->
+<!-- in this case the textColor class is stored in scss file, 
+	and only when applyRedText is 'yes', this class will apply in the h2 element -->
+<h2 [class.textColor] = "applyRedText === 'yes'">text color with simple class</h2>
+
+<!-- ngClass , get the class name from the ts file then get the class detail from scss file-->
+<div [ngClass] = "ngClasses">
+  {{messages}}
+</div>
+<hr/>
+<!-- the above code can be replaced with the following code: 
+	while 'danger' or 'text-size' is the class name stored in the scss file -->
+<div [ngClass] = "{
+	'danger': true, 'text-size': isTextSizeClassActive
+}">Another Ng class:{{messages}}</div>
+<!-- So the ngClass is quite similar to the className in React.js with material UI:
+ <div className = {classes.container}></div>
+ but ngClass support the switch and easier to combine two classes
+-->
+
+<button type="button" (click) = "changeCounter(true)" >+</button>
+<button type="button" (click) = "changeCounter(false)" >-</button>
+<span>{{counter}}</span>
+
+<!-- binding from html to js with ngModel and FormModule -->
+<input [(ngModel)] = "inputText" placeholder="text"/>
+<!-- binding from js to html -->
+<p>Input Value: {{inputText}}</p>
+<!-- ng inline style, from the component.ts instead of scss file-->
+<div class="color-box" [ngStyle]="{'background-color': selectedColor}"> Box </div>

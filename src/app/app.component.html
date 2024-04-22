@@ -1,27 +1,3 @@
-<span>Hello {{title}}</span>
-<button type="button" [disabled]='buttonAttr.isDisabled'>{{buttonAttr.label}}</button>
-<img alt="Angular" width="300" height="200" [src]="imageURL"/>
-<!-- in line style -->
-<div [style.backgroundColor]="container.bgColor">
-  <h2 [style.color]="titleColor">Hello {{title}}</h2>
-  <p [style] = "description">Description</p>
-</div>
-
-<button type="button" (click) = "changeCounter(true)" >+</button>
-<button type="button" (click) = "changeCounter(false)" >-</button>
-<span>{{counter}}</span>
-<!-- class from the scss file -->
-<h2 [class.textColor] = "applyRedText === 'yes'">text color with simple class</h2>
-<!-- ngClass -->
-<div [ngClass] = "ngClasses">
-  {{messages}}
-</div>
-<!-- binding from html to js with ngModel and FormModule -->
-<input [(ngModel)] = "inputText" placeholder="text"/>
-<!-- binding from js to html -->
-<p>Input Value: {{inputText}}</p>
-<!-- ng inline style -->
-<div class="color-box" [ngStyle]="{'background-color': selectedColor}"> Box </div>
-
+<span>Hello World, welcome to {{title}}</span>
 
 <router-outlet></router-outlet>

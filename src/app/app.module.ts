@@ -11,7 +11,8 @@ import { ServicesDiComponent } from './pages/services-di/services-di.component';
 import { MessagesService } from './services/messages.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsComponent } from './pages/forms/forms.component';
-import { ReactiveFormsComponent } from './pages/reactive-forms/reactive-forms.component'
+import { ReactiveFormsComponent } from './pages/reactive-forms/reactive-forms.component';
+import { BasicComponent } from './pages/basic/basic.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReactiveFormsComponent } from './pages/reactive-forms/reactive-forms.co
     AppendPipe,
     ServicesDiComponent,
     FormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    BasicComponent
   ],
   imports: [
     BrowserModule,

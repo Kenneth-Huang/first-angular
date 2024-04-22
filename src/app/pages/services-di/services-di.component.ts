@@ -26,7 +26,15 @@ export class ServicesDiComponent implements OnInit {
           next: (res:IPostMessage[]) => { this.postMessages = res },
           error: err => {console.error(err)}
         }  
-        // data => { this.postMessages = data }, err => console.log(err)
-      );
+    );
+    // similar to Promise in JS, next is equal to resolve and error is equals to reject
+    // new Promise((resolve, reject) => {
+    //    if(successed){
+    //      resolve('do sth')
+    //    }
+    //    else 
+    //    { reject('do sth else') }
+    // })
+    // or next is equals to Promise.then(); and error is Promise.catch()
   }
 }
