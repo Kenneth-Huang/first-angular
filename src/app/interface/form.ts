@@ -1,4 +1,4 @@
-export interface IUserForm {
+export interface UserForm {
 	name: string,
 	email: string,
 }

@@ -7,6 +7,8 @@ import { ServicesDiComponent } from './pages/services-di/services-di.component';
 import { FormsComponent } from './pages/forms/forms.component';
 import { ReactiveFormsComponent } from './pages/reactive-forms/reactive-forms.component';
 import { BasicComponent } from './pages/basic/basic.component';
+import { ComponentsCommunicationComponent } from './pages/components-communication/components-communication.component'
+import { CrudComponent } from './pages/crud/crud.component';
 const routes: Routes = [
 //   {
 //   path: '', redirectTo: '/home', pathMatch: 'full',
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path: 'pipes', component: PipesComponent },
   { path: 'services', component: ServicesDiComponent },
   { path: 'forms', component: FormsComponent },
-  { path: 'reactive-forms', component: ReactiveFormsComponent}
+  { path: 'reactive-forms', component: ReactiveFormsComponent },
+  { path: 'components-communication', component: ComponentsCommunicationComponent },
+  { path: 'crud', component: CrudComponent },
 ];
 
 @NgModule({

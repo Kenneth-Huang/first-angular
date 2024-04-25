@@ -1,6 +1,6 @@
 <div>
 	<h2>Reactive Form</h2>
-	<!-- Bracket for the fromGroup, because there might be more then one FormGroup variables -->
+	<!-- Bracket for the fromGroup directive, mapping to FormGroup type variable of userFormGroup in ts file -->
 	 <form [formGroup]="userFormGroup" (ngSubmit)="submitForm()"><!--please remember add the brackets here(invocation) -->
 		<div>
 			<label for="name">Name:</label>
@@ -19,12 +19,26 @@
 			<input type="text" name="city" id="city" placeholder="City" formControlName="city"/>
 		</div>
 		<div formArrayName = "phoneNumbers">
-			<div *ngFor="let phoneCtrl of phoneNumberArray.controls; let i = index">
+			<div *ngFor="let phoneCtrl of phoneNumberArray.controls; let i = index" class="formControl">
 				<label>Phone Number {{i+1}}</label>
-				<!-- Need bracket to bind the input dynamically, which means inside the ngFor loop, there are more then one formControl elements -->
+				<!-- Need bracket to bind the input dynamically -->
 				<input type="text" [formControlName] = "i"/>
 				<button type="button" (click)="removePhoneNumber(i)">Remove phone number</button>
 			</div>
+
+			<!-- This dynamic binding is equal to the following code -->
+			<!-- <div>
+				<label>Phone Number {{1}}</label>
+				<input type="text" formControlName = "0"/>
+			</div>
+			<div>
+				<label>Phone Number {{2}}</label>
+				<input type="text" formControlName = "1"/>
+			</div>
+			<div>
+				<label>Phone Number {{3}}</label>
+				<input type="text" formControlName = "2"/>
+			</div> -->
 			<div>
 				<button type="button" (click) = "addPhoneNumber()">Add phone number</button>
 			</div>

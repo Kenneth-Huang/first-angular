@@ -1,0 +1,4 @@
+<h1>Components Communication</h1>
+<h2>Tasks</h2>
+<!-- so the task here is defined in the tasks.component.ts, similar to the props defined in React component -->
+<app-tasks *ngFor = "let t of tasks; let i = index" [task] = 't' (deleteTaskRecord)="deleteTask(i)"></app-tasks>

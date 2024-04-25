@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {IPostMessage} from '../interface/messages.interface'
+import {PostMessage} from '../interface/messages'
 @Injectable({
   providedIn: 'root'
 })
@@ -10,8 +10,8 @@ export class MessagesService {
   
   constructor(private http: HttpClient) { }
 
-  getPostMessages(): Observable<IPostMessage[]>{
-    return this.http.get<IPostMessage[]>(this.apiUrl);
+  getPostMessages(): Observable<PostMessage[]>{
+    return this.http.get<PostMessage[]>(this.apiUrl);
   }
 
   getMessages() {

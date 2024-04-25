@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MessagesService} from '../../services/messages.service';
-import { IPostMessage } from '../../interface/messages.interface'
+import { PostMessage } from '../../interface/messages'
 
 @Component({
   selector: 'app-services-di',
@@ -11,7 +11,7 @@ import { IPostMessage } from '../../interface/messages.interface'
 
 export class ServicesDiComponent implements OnInit {
   messages: string[] = [];
-  postMessages: IPostMessage[] = [];
+  postMessages: PostMessage[] = [];
   
   // Dependency Injection
   constructor(private messageService: MessagesService) {
@@ -23,7 +23,7 @@ export class ServicesDiComponent implements OnInit {
     this.messageService.getPostMessages()
       .subscribe(
         {
-          next: (res:IPostMessage[]) => { this.postMessages = res },
+          next: (res:PostMessage[]) => { this.postMessages = res },
           error: err => {console.error(err)}
         }  
     );

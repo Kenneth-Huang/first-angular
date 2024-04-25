@@ -1,4 +1,4 @@
-export interface IPostMessage  {
+export interface PostMessage  {
 	id: number,
 	userId: number,
 	title: string,

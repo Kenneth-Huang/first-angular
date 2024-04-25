@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { IUserForm } from '../../interface/form.interface'
+import { UserForm } from '../../interface/form'
 import { emailRegex } from 'src/app/util/regex';
 
 @Component({
@@ -9,7 +9,7 @@ import { emailRegex } from 'src/app/util/regex';
   styleUrls: ['./forms.component.scss']
 })
 export class FormsComponent {
-  user: IUserForm = {
+  user: UserForm = {
     name: '',
     email: '',
   }

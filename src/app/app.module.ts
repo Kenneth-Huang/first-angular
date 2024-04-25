@@ -12,7 +12,13 @@ import { MessagesService } from './services/messages.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsComponent } from './pages/forms/forms.component';
 import { ReactiveFormsComponent } from './pages/reactive-forms/reactive-forms.component';
-import { BasicComponent } from './pages/basic/basic.component'
+import { BasicComponent } from './pages/basic/basic.component';
+import { ComponentsCommunicationComponent } from './pages/components-communication/components-communication.component';
+import { TasksComponent } from './pages/components-communication/tasks/tasks.component';
+import { CrudComponent } from './pages/crud/crud.component';
+import { NoteFormComponent } from './components/note-form/note-form.component';
+import { NoteListComponent } from './components/note-list/note-list.component'
+import { NoteService } from './services/note.service'
 
 @NgModule({
   declarations: [
@@ -24,7 +30,12 @@ import { BasicComponent } from './pages/basic/basic.component'
     ServicesDiComponent,
     FormsComponent,
     ReactiveFormsComponent,
-    BasicComponent
+    BasicComponent,
+    ComponentsCommunicationComponent,
+    TasksComponent,
+    CrudComponent,
+    NoteFormComponent,
+    NoteListComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +44,7 @@ import { BasicComponent } from './pages/basic/basic.component'
     ReactiveFormsModule, //For reactive forms
     HttpClientModule,
   ],
-  providers: [MessagesService],
+  providers: [MessagesService, NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
