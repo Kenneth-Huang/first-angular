@@ -10,7 +10,14 @@ import { NoteService } from 'src/app/services/note.service';
 export class NoteListComponent implements OnInit {
   notes: Note[] = [];
   @Output() editNoteEmitter = new EventEmitter<Note>();
-  constructor(private noteService: NoteService) { }
+  constructor(private noteService: NoteService) {
+
+    // the subscribe can also set inside the constructor
+    // this.noteService.getNotesObservable().subscribe((notes: Note[]) => {
+    //   this.notes = notes;
+    // })
+
+   }
   
   ngOnInit() {
     this.noteService.getNotesObservable().subscribe((notes: Note[]) => {

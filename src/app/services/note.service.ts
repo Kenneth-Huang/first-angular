@@ -28,15 +28,14 @@ export class NoteService {
   createNote(note: Note): void {
     note.id = generateRandomId();
     this.notes.push(note);
-    // next(): update observable and trigger the re-render, similar the setState in the React
-    this.notesSubject.next(this.notes);
+    this.notesSubject.next(this.notes); // Update subscribers with the new list of notes
   }
 
   updateNote(note: Note): void {
     const index = this.notes.findIndex(n => n.id === note.id);
     if (index !== -1) {
       this.notes[index] = note;
-      this.notesSubject.next(this.notes);
+      this.notesSubject.next(this.notes); // Update subscribers with the new list of notes
     }
   }
 
