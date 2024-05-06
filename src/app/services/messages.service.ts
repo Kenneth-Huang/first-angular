@@ -14,6 +14,10 @@ export class MessagesService {
     return this.http.get<PostMessage[]>(this.apiUrl);
   }
 
+  getPostMessage(id: number): Observable<PostMessage>{
+    return this.http.get<PostMessage>(`${this.apiUrl}/${id}`);
+  }
+
   getMessages() {
     return ['message 1', 'message 2', 'message 3'];
   }

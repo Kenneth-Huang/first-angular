@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MessagesService} from '../../services/messages.service';
-import { PostMessage } from '../../interface/messages'
-
+import {MessagesService} from 'src/app/services/messages.service';
+import { PostMessage } from 'src/app/interface/messages';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-services-di',
   templateUrl: './services-di.component.html',
@@ -14,11 +14,15 @@ export class ServicesDiComponent implements OnInit {
   postMessages: PostMessage[] = [];
   
   // Dependency Injection
-  constructor(private messageService: MessagesService) {
+  constructor(private messageService: MessagesService, private router: Router) {
     this.messages = messageService.getMessages();
   }
 
-  //Similar to componentDidMount in React?
+  navigateToMessage(id: number){
+    this.router.navigate(['/services', id]);
+  };
+  
+  //Similar to componentDidMount in React, but need to be used after other member function
   ngOnInit() {
     this.messageService.getPostMessages()
       .subscribe(
@@ -32,9 +36,11 @@ export class ServicesDiComponent implements OnInit {
     //    if(successed){
     //      resolve('do sth')
     //    }
-    //    else 
+    //    else
     //    { reject('do sth else') }
     // })
     // or next is equals to Promise.then(); and error is Promise.catch()
+    
+  
   }
 }

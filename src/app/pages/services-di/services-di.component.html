@@ -2,7 +2,8 @@
 <!-- <p>message: {{postMessages}}</p> -->
 <div *ngFor="let message of postMessages">
 	<h2>{{message.title}}</h2>
-	<p>{{message.body}}</p>
+	<!-- <p>{{message.body}}</p> -->
+	<button (click) = "navigateToMessage(message.id)">detail</button>
 	<hr>
 </div>
 

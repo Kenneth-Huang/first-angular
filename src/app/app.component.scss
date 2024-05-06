@@ -1,0 +1,54 @@
+nav {
+	background-color: #2c2c2d;
+	// min-height: 4rem;
+	font-size: large;
+	padding: 0.5rem 1rem;
+
+	// display: flex;
+	// align-items: center;
+	// justify-content: space-between;
+	ul {
+	  list-style: none; // Removes the default list styling
+	  padding: 0; 
+	  margin: 0; 
+	   display: flex; 
+	  justify-content: space-around; 
+  
+	  li {
+		padding: 10px 20px; 
+		a {
+		  text-decoration: none; // Removes underline from links
+		  color: #fff; 
+		  font-weight: bold; 
+  
+		  &:hover {
+			color: #ffee37; 
+			border-bottom: 2px solid #ffee37; // Adds a bottom border on hover
+		  }
+  
+		//   &.active {
+		// 	color: #4CAF50; 
+		// 	border-bottom: 3px solid #4CAF50; 
+		//   }
+		}
+	  }
+	}
+  }
+  
+  // Responsive design adjustments
+  @media (max-width: 768px) {
+	nav ul {
+	  flex-direction: column; // Stacks the navigation links vertically on smaller screens
+	  align-items: center; // Centers the links
+  
+	  li {
+		width: 100%; // Makes each link full width
+		text-align: center; // Centers the text inside the links
+	  }
+	}
+  }
+
+  .container {
+	padding: 10px;
+  }
+  
